@@ -12,12 +12,28 @@ import io
 import cereal.messaging as messaging
 from cereal.visionipc import VisionIpcClient, VisionStreamType
 from common.realtime import DT_MDL
+import argparse
+import cv2
 
 VISION_STREAMS = {
     "roadCameraState": VisionStreamType.VISION_STREAM_ROAD,
     "driverCameraState": VisionStreamType.VISION_STREAM_DRIVER,
     "wideRoadCameraState": VisionStreamType.VISION_STREAM_WIDE_ROAD,
 }
+
+# construct the argument parse and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--input", required=True,
+	help="path to input video")
+ap.add_argument("-o", "--output", required=True,
+	help="path to output video")
+ap.add_argument("-y", "--yolo", required=True,
+	help="base path to YOLO directory")
+ap.add_argument("-c", "--confidence", type=float, default=0.5,
+	help="minimum probability to filter weak detections")
+ap.add_argument("-t", "--threshold", type=float, default=0.3,
+	help="threshold when applyong non-maxima suppression")
+args = vars(ap.parse_args())
 
 def yuv_to_rgb(y, u, v):
   ul = np.repeat(np.repeat(u, 2).reshape(u.shape[0], y.shape[1]), 2, axis=0).reshape(y.shape)
