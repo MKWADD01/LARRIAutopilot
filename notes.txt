@@ -1,0 +1,13 @@
+GOALS:
+1.) Run the YOLO application simultaneously with app.py/flask application.
+2.) Connect the detect.py object detection to Comma camera.
+
+Notes:
+https://github.com/ultralytics/yolov5
+^^^ documentation on how to run program
+
+python detect.py --source 0
+^^^ command to test out detect.py
+
+Parse function provides parameters that can be used in command line.
+The --source allows you to select a video feed, which we will replace with either the road camera or road camera wide.

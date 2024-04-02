@@ -48,7 +48,6 @@ def yuv_to_rgb(y, u, v):
   rgb = np.dot(yuv, m).clip(0, 255)
   return rgb.astype(np.uint8)
 
-
 def extract_image(buf, w, h, stride, uv_offset):
   y = np.array(buf[:uv_offset], dtype=np.uint8).reshape((-1, stride))[:h, :w]
   #u = np.array(buf[uv_offset::2], dtype=np.uint8).reshape((-1, stride//2))[:h//2, :w//2]
@@ -88,11 +87,9 @@ def get_cam_bytes(frame="roadCameraState", front_frame="driverCameraState"):
 class ImageLoader:
     def __init__(self, frequency):
         self.frequency = frequency
-
         self.stop = Event()
         self.image = None
         self.fimage = None
-
         self.thread = Thread(target=self.worker)
         self.thread.start()
     
@@ -121,7 +118,6 @@ class ImageLoader:
             #    self.image = f.read()
             #self.image = np.resize(self.image, (640, 640))
             sleep(1/self.frequency)
-
 
 app = Flask(__name__)
 
