@@ -11,3 +11,6 @@ python detect.py --source 0
 
 Parse function provides parameters that can be used in command line.
 The --source allows you to select a video feed, which we will replace with either the road camera or road camera wide.
+
+IDEAS:
+- Percentage of field(camera) covered by a "person" can be what is used to run YOLO
