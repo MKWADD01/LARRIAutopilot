@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response
 import sys
+import os
 sys.path.insert(0, '/data/openpilot/system/camerad/snapshot')
 import snapshot as sns
 from time import sleep, time
@@ -113,12 +114,12 @@ class ImageLoader:
             fpic_img.save(img_byte, format="jpeg")
             self.image = img_byte.getvalue()
             #self.image = np.array(pic)
-
             #with open("back.jpg", "rb") as f:
             #    self.image = f.read()
             #self.image = np.resize(self.image, (640, 640))
-            sleep(1/self.frequency)
-
+        sleep(1/self.frequency)
+	myCmd = os.popen('python3 detect --source %s', self.image).read()
+	print(myCmd)
 app = Flask(__name__)
 
 @app.route("/")
