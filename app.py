@@ -10,9 +10,9 @@ import numpy as np
 from threading import Event, Thread
 from PIL import Image
 import io
-import openpilot.cereal.messaging as messaging
-from openpilot.cereal.visionipc import VisionIpcClient, VisionStreamType
-from openpilot.common.realtime import DT_MDL
+import cereal.messaging as messaging
+from cereal.visionipc import VisionIpcClient, VisionStreamType
+from common.realtime import DT_MDL
 import argparse
 import cv2
 
