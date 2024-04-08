@@ -104,8 +104,9 @@ class ImageLoader:
             #    self.image = f.read()
             #self.image = np.resize(self.image, (640, 640))
         sleep(1/self.frequency)
-myCmd = os.popen('python3 detect --source %s', self.image).read()
-print(myCmd)
+# myCmd = os.popen('python3 detect --source %s', self.image).read()
+# print(myCmd)
+
 app = Flask(__name__)
 
 @app.route("/")
