@@ -1,10 +1,10 @@
 import cv2
 
-def run_webcam():
+def WebcamZones():
     cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
-        raise IOError("Cannot open webcam")
+        raise IOError("Cannot open WebcamZones")
 
     while True:
         ret, frame = cap.read()
@@ -12,7 +12,7 @@ def run_webcam():
             print("Failed to grab frame")
             break
 
-        #dimensions of default camera(webcam)
+        #dimensions of default camera(WebcamZones)
         height, width = frame.shape[:2]
 
         #divides camera into 1/4's, 
@@ -24,7 +24,7 @@ def run_webcam():
 
         cv2.imshow('Left, Center, Right zones', frame)
 
-        #Exit webcam loop with esc key
+        #Exit WebcamZones loop with esc key
         if cv2.waitKey(1) == 27:
             break
 
@@ -32,4 +32,4 @@ def run_webcam():
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    run_webcam()
+    WebcamZones()
