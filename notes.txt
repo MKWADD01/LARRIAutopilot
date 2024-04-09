@@ -13,4 +13,9 @@ Parse function provides parameters that can be used in command line.
 The --source allows you to select a video feed, which we will replace with either the road camera or road camera wide.
 
 MADDISON 4/8/24
-Please check the word document I've linked for a visual on what our goal is in the discord
+Please check the Word document I've linked for a visual on what our goal is
+https://1drv.ms/w/c/49fdf4850048e3da/EbhXSyz6ha5FuurmX24BfE8B6iRaKNvcQKRoHaKtuY7czQ?e=LoWhhs
+This link is also in the discord if it doesn't work from here
+
+I have added in yolov5 from a zip file rather than a clone since it seemed to be causing issues with pushing,
+and now the files should be changeable without getting an error
