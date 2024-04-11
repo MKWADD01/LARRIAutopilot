@@ -1,18 +1,19 @@
 # higher_level_concurrent_script.py
 import subprocess
-
 import multiprocessing
 import os
 
 def run_webcam_zones():
     # Change working directory to where WebcamZones.py is located
-    os.chdir("C:/Users/Adhi Ramkumar/LARRIAutopilot")
+    #os.chdir("C:/Users/Adhi Ramkumar/LARRIAutopilot")
+    os.chdir("C:/Users/User/PycharmProjects/LARRIAutopilot")
     # Run WebcamZones.py script
     subprocess.run(["python", "zones.py"])
 
 def run_detect():
     # Change working directory to where detect.py is located
-    os.chdir("C:/Users/Adhi Ramkumar/LARRIAutopilot/yolov5/yolov5")
+    #os.chdir("C:/Users/Adhi Ramkumar/LARRIAutopilot/yolov5/yolov5")
+    os.chdir("C:/Users/User/PycharmProjects/LARRIAutopilot/yolov5")
     # Run detect.py script
     subprocess.run(["python", "detect.py", "--source", "0"])
 
@@ -28,3 +29,4 @@ if __name__ == "__main__":
     # Wait for both processes to finish
     webcam_zones_process.join()
     detect_process.join()
+
